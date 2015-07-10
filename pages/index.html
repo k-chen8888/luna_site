@@ -1,0 +1,91 @@
+<!doctype html>
+
+<head>
+	<title>Moonlit Spring</title>
+	<!-- Dependencies -->
+	<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+	
+	<!-- JavaScript magic -->
+	<script src="js/harunaluna_index.js"></script><!-- Adapted carousel code to make things vanish and reappear -->
+	<script src="js/harunaluna_home.js"></script><!-- Makes the home panel look cool -->
+	<script src="js/harunaluna_eventcal.js"></script><!-- Script for the event calendar -->
+	
+	<!-- CSS magic -->
+	<link rel="stylesheet" type="text/css" href="css/harunaluna_index_style.css"> <!-- Puts the stuff on index.html where it belongs -->
+</head>
+
+<body>
+	<div class="sidebar" id="left">
+		<ul>
+			<li><a id="home" href="#">Welcome!</a></li>
+			<li><a id="blog" href="#">Blog</a></li>
+			<li><a id="wiki" href="#">Wiki</a></li>
+			
+			<hr>
+			
+			<li><a id="social" href="#">Social Media</a></li>
+			<li><a id="events" href="#">Events</a></li>
+			<li><a id="news" href="#">News Feeds</a></li>
+			
+			<hr>
+			
+			<li><a href="./login">Login</a></li>
+			<li><a href="./register">Register</a></li>
+		</ul>
+	</div>
+	
+	<div class="content" id="home">
+		<!-- A simple informational section -->
+		<p>This is the home panel!</p>
+	</div>
+	
+	<div class="content" id="blog">
+		<!-- Blog posts, in shortened form -->
+		<p>This where blogs will go</p>
+	</div>
+	
+	<div class="content" id="wiki">
+		<!-- Search the wiki -->
+		<p>A local wiki with tons of info</p>
+	</div>
+	
+	<!-- Draw the line here in the sidebar -->
+	
+	<div class="content" id="social">
+		<!-- Twitter, Facebook, LINE, etc. -->
+		<p>Social media</p>
+		
+		<div id="facebook">
+			<p>Luna's Facebook page</p>
+		</div>
+		
+		<div id="twitter">
+			<h1><a class="page-hard-link" href="https://twitter.com/luna_galaxy">Luna's Twitter</a></h1>
+			
+			<br />
+			
+			<a class="twitter-timeline" href="https://twitter.com/luna_galaxy" data-widget-id="497006646774624256">Tweets by @luna_galaxy</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+		</div>
+	</div>
+	
+	<div class="content" id="events">
+		<!-- Event calendar -->
+		<p>Events</p>
+	</div>
+	
+	<div class="content" id="news">
+		<!-- RSS feeds -->
+		<p>RSS feeds</p>
+	</div>
+	
+	<!-- Draw another line here in the sidebar -->
+	
+	<div class="sidebar" id="right">
+		<!-- Chatrooms -->
+		<ul id="messages"></ul>
+		<form id="inputmsg" action="">
+			<input id="m" autocomplete="off" /><button>Send</button>
+		</form>
+	</div>
+</body>
