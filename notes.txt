@@ -1,0 +1,41 @@
+Color scheme data:
+	Cherry Blossom Pink:
+		rgb(255, 183, 197)
+		#FFB7C5
+
+In a module folder...
+	Any .js file contains a function that outputs all functions that the module has
+	Any folder contains a sub-module
+	
+	Naming convention:
+		module.folder_name is a sub-module stored in folder folder_name
+			The name is "folder_name"
+		folder_name.js is the entry point for a module called folder_name
+
+Directory Tree:
+	index.js
+	package.json
+	modules
+		modules.js
+		blog
+	pages -> follow the same directory tree structure as modules
+		module_name
+			js
+			css
+			module_name.html (or template file)
+
+Need to install/configure:
+	Test command
+	Testing tools
+	Templates
+
+This will be on the site:
+	blog
+	user stuff
+		Achievements!
+	wiki
+		Discography
+	chat
+	map
+		Events (live, radio, etc.)
+	friendship graph of related terms (Kajiura Yuki, etc.)
