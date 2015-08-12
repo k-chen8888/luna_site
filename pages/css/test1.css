@@ -1,0 +1,41 @@
+#background {
+	position: absolute;
+	background-image: url("http://nihongogo.com/wordpress/wp-content/uploads/2013/06/STKNrn4-620x400.jpg");
+	background-repeat: no-repeat;
+	background-size: 100vw ;
+	height: 100vh;
+	width: 100vw;
+}
+
+#sidebar {
+	position: absolute;
+	background-color: cyan;
+	height: 100vh;
+	width: 220px;
+	
+}
+
+#sidebar a {
+	position: relative;
+	top: 8vh;
+	left: 15px;
+	color: orange;
+	text-decoration: none;
+	font-family: calibri;
+	font-size: 90px;
+}
+
+#body {
+	position: absolute;
+	color: red;
+	font-weight: 2;
+	left: 30vw;
+	font-size: 30vw;
+	font-family: impact;
+}
+
+#body a {
+	color: purple;
+	font-size: 10vw;
+	text-decoration: none;
+}

@@ -1,0 +1,22 @@
+{
+  "name": "luna_site",
+  "version": "0.0.0",
+  "description": "Haruna Luna NA Fanclub",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/k-chen8888/luna_site.git"
+  },
+  "author": "luna.webmaster",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/k-chen8888/luna_site/issues"
+  },
+  "homepage": "https://github.com/k-chen8888/luna_site#readme",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
