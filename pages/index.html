@@ -3,11 +3,12 @@
 <head>
 	<title>Moonlit Spring</title>
 	<!-- Dependencies -->
-	<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
 	
 	<!-- JavaScript magic -->
 	<script src="js/harunaluna_index.js"></script><!-- Adapted carousel code to make things vanish and reappear -->
-	<script src="js/harunaluna_home.js"></script><!-- Makes the home panel look cool -->
+	<script src="js/harunaluna_home.js"></script><!-- Makes the home panel look cool and enables socket.io events -->
 	<script src="js/harunaluna_eventcal.js"></script><!-- Script for the event calendar -->
 	
 	<!-- CSS magic -->
@@ -29,8 +30,8 @@
 			
 			<hr>
 			
-			<li><a href="./login">Login</a></li>
-			<li><a href="./register">Register</a></li>
+			<li><a class="login" href="#">Login</a></li>
+			<li><a class="register" href="#">Register</a></li>
 		</ul>
 	</div>
 	
@@ -78,6 +79,32 @@
 		<!-- RSS feeds -->
 		<p>RSS feeds</p>
 	</div>
+	
+	
+	<!-- These float over the screen when their corresponding link is clicked -->
+	
+	<div class="content floatover" id="login">
+		<div id="login-form-container">
+			<form id="login" action="">
+				<input id="user" autocomplete="off" /><br>
+				<input id="pass" autocomplete="off" /><br>
+				Remember Me? <input id="remember" name="remember" type="checkbox"/><br>
+				<button>Log In</button>
+			</form>
+		</div>
+	</div>
+	
+	<div class="content floatover" id="register">
+		<div id="register-form-container">
+			<form id="register" action="">
+				<input id="user" autocomplete="off" /><br>
+				<input id="pass" autocomplete="off" /><br>
+				<input id="email" autocomplete="off" /><br>
+				<button>Register</button>
+			</form>
+		</div>
+	</div>
+	
 	
 	<!-- Draw another line here in the sidebar -->
 	

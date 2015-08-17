@@ -1,12 +1,16 @@
 /* Hides the old id and reveals the new one */
 var change_hide = function(classname, hide, show) {
-	$(classname + '#' + hide).fadeTo(500, 0, function(){
-		$(classname + '#' + hide).css({'pointer-events': 'none'});
-	});
+	if (hide) {
+		$(classname + '#' + hide).fadeTo(500, 0, function(){
+			$(classname + '#' + hide).css({'pointer-events': 'none'});
+		});
+	}
 	
-	$(classname + '#' + show).fadeTo(500, 1, function(){
-		$(classname + '#' + show).css({'pointer-events': ''});
-	});
+	if (show) {
+		$(classname + '#' + show).fadeTo(500, 1, function(){
+			$(classname + '#' + show).css({'pointer-events': ''});
+		});
+	}
 };
 
 /* Hides everything BUT the given id */
@@ -49,17 +53,47 @@ $(document).ready(function() {
 	// Listen for clicks
 	// Hide/show content accordingly
 	$('.sidebar#left ul li a').click(function(){
-		// Only fire if new content will be revealed
-		if (revealed !== $(this).attr('id')) {
-			// Change what's hidden
-			change_hide(classname, revealed, $(this).attr('id'));
-			
-			// Change active classes
-			$(this).parent().addClass('active');
-			$('.sidebar#left ul li a#' + revealed).parent().removeClass('active');
-			
-			// New revealed content
-			revealed = $(this).attr('id');
+		// Is there an 'id'?
+		if ($(this).attr('id')) {
+			// Only fire if new content will be revealed
+			if (revealed !== $(this).attr('id')) {
+				// Change what's hidden
+				change_hide(classname, revealed, $(this).attr('id'));
+				
+				// Change active classes
+				$(this).parent().addClass('active');
+				$('.sidebar#left ul li a#' + revealed).parent().removeClass('active');
+				
+				// New revealed content
+				revealed = $(this).attr('id');
+			}
+		} else {
+			// Login/register is an overlay
+			change_hide(classname, undefined, $(this).attr('class'));
+		}
+	});
+	
+	// Disable the login/register overlay by clicking on the gray area
+	$('div.floatover').click(function() {
+		change_hide(classname, $(this).attr('id'), undefined);
+	});
+	// ESC (key code 27) does the same thing
+	$('div.floatover').keyup(function(e) {
+		if (e.keyCode == 27) {
+			change_hide(classname, $(this).attr('id'), undefined);
 		}
 	});
 });
+
+/*
+Homepage plans
+
+Scrollable
+	Dynamically show/hide what should be onscreen when the scroll reaches that position
+	Dynamically change active menu item when scroll reaches position
+	Chat in dropdown with room change
+	
+	Tablet: Make the chat sidebar part of the dropdown
+	
+	Mobile: Make the menu a dropdown that shows new options for each section
+*/
