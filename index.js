@@ -1,7 +1,9 @@
 var Express = require('express');
 var app = Express();
 
-var http = require('http').Server(app);
+var http = require('http').Server(app),
+	port = 1337,
+	debug = require(debug)('http');
 
 var modules = require('./modules/modules.js')();
 
@@ -13,6 +15,6 @@ app.get('/', function(req,res) {
 });
 
 
-http.listen(1337, function() {
-	console.log('listening on port 1337');
+http.listen(port, function() {
+	debug('listening on port *:port');
 });

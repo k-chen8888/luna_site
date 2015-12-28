@@ -1,7 +1,14 @@
-module.exports = function () {
+module.exports = function (debug) {
 	var database = {
 		mysql: require('mysql')
 	};
+	
+	/* Debugging
+	 * 	DEBUG=<some name>, <some name>, etc. or DEBUG=* for everything
+	 * 
+	 * Note: set DEBUG=<this>,<this>,etc.-not_this on Windows
+	 */
+	database.debug = require('debug')('database');
 	
 	// Attempt to connect to the database
 	require('./connect.js')(database, {
@@ -17,7 +24,7 @@ module.exports = function () {
 		database.del = require('./delete.js')(conn);
 		database.close_connection = require('./close_connection.js')(conn);
 	}, function (err) {
-		console.log(err);
+		debug(err);
 	});
 	
 	// For when the node.js process itself ends...
@@ -25,15 +32,15 @@ module.exports = function () {
 		// Close any connections
 		if (database.connection) {
 			database.close_connection().then(function (success) {
-				console.log(success);
-				console.log('I am dying');
+				debug(success);
+				debug('I am dying');
 				process.exit();
 			}, function(err) {
-				console.log(err);
-				console.log('Process did not end!');
+				debug(err);
+				debug('Process did not end!');
 			});
 		} else {
-			console.log('I am dying');
+			debug('I am dying');
 			process.exit();
 		}
 	});

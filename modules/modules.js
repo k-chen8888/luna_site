@@ -1,13 +1,6 @@
 module.exports = function () {
 	var exports = {};
 	
-	/* Debugging
-	 * 	DEBUG=<some name>, <some name>, etc. or DEBUG=* for everything
-	 * 
-	 * Note: set DEBUG=<this>,<this>,etc.-not_this on Windows
-	 */
-	exports.debug = require('debug')('all');
-	
 	/* MySQL database
 	 */
 	exports.database = require('./database/database.js')();
@@ -33,6 +26,10 @@ module.exports = function () {
 	 * Requires RedisStore to check if the user is allowed to chat
 	 */
 	exports.chat = require('./chat/chat.js');
+	
+	/* Handlers for general pages on the site
+	 */
+	exports.pages = require('./pages/pages.js')();
 	
 	return exports;
 };
