@@ -40,3 +40,8 @@
 	font-size: 95px;
 	text-decoration: none;
 }
+
+div .page {
+	width: 100vw;
+	height: 100vh;
+}
