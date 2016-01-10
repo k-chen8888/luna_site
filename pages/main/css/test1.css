@@ -1,47 +1,94 @@
-#background {
-	position: absolute;
-	background-image: url("http://nihongogo.com/wordpress/wp-content/uploads/2013/06/STKNrn4-620x400.jpg");
-	background-repeat: no-repeat;
-	background-size: 100vw ;
-	height: 100vh;
-	width: 100vw;
-}
+
 
 #sidebar {
 	position: absolute;
 	background-color: cyan;
-	height: 100vh;
-	width: 220px;
-	
+	width: 150px;
+	height: 100%;
+	left: -2px;
+	top: -2px;
+}
+#sidebar ul {
+	list-style-type: none;	
+	margin: 0 auto;
+}
+
+#sidebar li {
+	position: relative;
+	padding-top: 10vh;
+	text-align: center;
+	left: -20px;
 }
 
 #sidebar a {
-	position: relative;
-	top: 8vh;
-	left: 15px;
-	color: orange;
 	text-decoration: none;
-	font-family: calibri;
-	font-size: 90px;
+	z-index: 10;
+	font-size: 30px;
+	font-family: arial;
+	text-align: center;
 }
 
-#body {
+#home {
 	position: absolute;
-	color: red;
-	font-weight: 2;
-	left: 300px;
-	top: 50vh;
-	font-size: 95px;
-	font-family: impact;
+	overflow-x: hidden;
+	background-color: red;
+	z-index: -100;
+	/*left: 148px;*/
+	top: -2px;
+	width: 100%;
+	height: 100%;
 }
 
-#body a {
-	color: purple;
-	font-size: 95px;
-	text-decoration: none;
+#blog {
+	position: absolute;
+	overflow-x: hidden;
+	background-color: green;
+	z-index: -100;
+	/*left: 148px;*/
+	top: -2px;
+	width: 100%;
+	height: 100%;
 }
 
-div .page {
-	width: 100vw;
-	height: 100vh;
+#chat {
+	position: absolute;
+	overflow-x: hidden;
+	background-color: blue;
+	z-index: -100;
+	/*left: 148px;*/
+	top: -2px;
+	width: 100%;
+	height: 100%;
+}
+
+#social {
+	position: absolute;
+	overflow-x: hidden;
+	background-color: yellow;
+	z-index: -5;
+	/*left: 148px;*/
+	top: -2px;
+	width: 100%;
+	height: 100%;
+}
+
+#social #twitter {
+	position: relative;
+	left: 30%;
+	top: 5%;
+}
+
+#social #links {
+	position: relative;
+	left: 40%;
+	top: 5%;
+}
+#social #facebook {
+	position: relative;
+	left: 2%;
+}
+
+#social #line {
+	position: relative;
+	left: 27%;
 }
